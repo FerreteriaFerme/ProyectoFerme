@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+{% load humanize %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+
+
+    <div class="row" style="margin: auto; ">
+        <div class="col-9">
+            <div class="row" >
+                {% for p in productos %}
+                 <div class="col-md-4 col-sm-12 col-lg-14">
+                    <div class="card" >
+                        <div class="card-body">
+                            <img style="height: 250px; width: 250px;" class="card-img-top center" src="{{ p.imagen.url }}" alt="{{ p.nombre }}">
+                            <div class="card-body" >
+                                <h4 style="text-align: center; padding: 5px;" class="card-title">{{ p.nombre }}</h4>
+                                <p  style="text-align: center;" class="card-text">${{ p.precio | intcomma }}</p>
+                                <h1><a href=""><i class="fas fa-shopping-cart"></i></a></h2>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

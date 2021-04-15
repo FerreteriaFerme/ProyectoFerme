@@ -3,6 +3,7 @@ from .forms import CustomUserCreationForm, ProductoForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from core.models import Producto
+from django.contrib.auth.decorators import login_required ,permission_required
 
 
 
@@ -79,3 +80,11 @@ def eliminar_productos(request ,id):
     producto.delete()
     messages.success(request, "Producto eliminado correctamente.")
     return redirect(to= "listar-productos")
+
+def listado_productos(request):
+    productos = Producto.objects.all()
+
+    data={
+        'productos': productos
+    }
+    return render(request, 'app/vista_cliente/listado_productos.html', data)

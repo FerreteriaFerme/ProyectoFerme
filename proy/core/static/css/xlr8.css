@@ -321,12 +321,22 @@ footer p {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+    height: 50%;
 }
 .padre {
-	background-color: red;
-	border: 1px solid #ccc;
-	padding: 0 1rem;
-	margin: 1rem;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    padding: 0 1rem;
+    margin: 1rem;
+  }
+  
+  .hijo_uno {
+    background-color: yellow;
+    
+    /* IMPORTANTE */
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 @media only screen and (max-width: 780px) {
